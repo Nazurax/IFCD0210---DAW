@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+}
+
+.caja {
+    width: 280px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid #333;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Izquierda */
+.izquierda {
+    float: left;
+}
+
+/* Caja 1 con color */
+.izquierda.uno {
+    background-color: #d2f4ea;
+}
+
+/* Caja 2 con color */
+.izquierda.dos {
+    background-color: #b0eac6;
+}
+
+/* Derecha */
+.derecha {
+    float: right;
+    background-color: #fff9c0;
+}
+
+/* Caja sin flotación */
+.sin-flotar {
+    clear: both;
+    width: auto;
+    background-color: #fff;
+    margin-top: 20px;
+}

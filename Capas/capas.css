@@ -1,0 +1,101 @@
+#contenedor{
+    width: 900px;
+    height: 600px;
+    border: 2px solid orangered;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header {
+    background-color: cadetblue;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 0px;
+}
+
+aside {
+    height: calc(100% - 51.6px);
+    width: 100px;
+    background-color: aquamarine;
+    border-radius: 8px;
+}
+
+main {
+    
+    background-color: gainsboro;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #contenedor {
+	width: 900px;
+	height: 600px;
+	border: 2px solid red;
+	margin-right: auto;
+	margin-left: auto;
+}
+header {
+	background-color: lightgreen;
+	height:50px;
+	padding:5px
+}
+aside {
+	background-color: orange;
+	float: left;
+	width: 140px;
+	height: calc(100% - 90px);
+	padding: 5px;
+	box-sizing: border-box;
+}
+main{
+	background-color: lightgray;
+    display: inline-block;
+    width:760px;
+	height:calc(100% - 90px);
+	padding: 5px;
+	box-sizing: border-box;	
+}
+footer {
+	background-color: lightblue;
+	clear: both;
+	height: 30px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+*/
+

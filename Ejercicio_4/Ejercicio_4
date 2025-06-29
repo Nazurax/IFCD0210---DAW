@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio_4</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="2" style="color: orange;">
+                    <strong>MIERCOLES 18 DE JUNIO</strong><br>
+                    MAÑANA<br>
+                    <b style="color: black;">Lugar: Sala de actos de la ETSEIB</b>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <span style="color: orange;">Estrategias de futuro para una actividad académica de calidad</span><br>
+                    Presidente:<br>
+                    Antonio Giró, director general de Universidades, Generalitat de Catalunya<br>
+                    Relator: <br>
+                    Javier Bará, director, Instituto de ciencias de la educación, Universitat <br>
+                    Politécnica de Catalunya <br> <br>
+                </td>        
+            </tr>
+                <td style="vertical-align: top;">9:30 h</td>
+                <td>
+                    <b>Calidad: "historia" del personal académico</b><br>
+                    Liebeth van Welie, directora de Validad en la Educación, Universiteit van <br>
+                    Amsterdam, Países Bajos <br> <br>
+                </td>
+            <tr>
+                <td style="vertical-align: top;">10:30 h</td>
+                <td>
+                    <b>Recalibrando el balande de docencia e investigación en las <br>
+                        universidades de investigación: la experiencia reciente de la <br>
+                        Universidad de Stanford</b><br>
+                        Michelle Marincovich, directora, Center for Teaching an Learning, Stanford <br>
+                        University, Stanford, Estados Unidos
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>

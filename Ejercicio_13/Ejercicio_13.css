@@ -1,0 +1,116 @@
+.form-container {
+    width: 800px;
+    margin: 20px auto;
+    background-color: rgb(243, 196, 121);
+    padding: 10px;
+    border: 4px solid black;
+}
+
+.linea {
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+label {
+    display: inline-block;
+    width: 115px;
+    padding: 3px;
+    background-color: rgb(255, 145, 0);
+    color: white;
+    text-align: right;
+    vertical-align: top;
+    border: 2px solid white;
+}
+
+input.corto {
+    width: 111px;
+    padding-top: 4px;
+}
+
+input.medio {
+    width: 260px;
+    padding-top: 4px;
+
+}
+
+input.largo {
+    width: 661px;
+    padding-top: 4px;
+
+}
+
+input.ciudad {
+    width: 408px;
+    padding-top: 4px;
+}
+
+.bloque-idiomas {
+    display: inline-block;
+    padding: 0px;
+    background-color: rgb(218, 229, 137);
+    border: 1px solid black;
+    vertical-align: middle;
+    margin-left: 255px;
+}
+
+.bloque-idiomas label {
+    display: block;
+    background-color: transparent;
+    color: black;
+    text-align: left;
+    border: 1px solid transparent;
+}
+
+label.idiomas {
+    color: rgb(255, 255, 255);
+    text-align: right;
+    vertical-align: middle;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.linea.idiomas-linea {
+    text-align: center;
+}
+
+
+label.comentarios {
+    vertical-align: top;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-top-width: 2px;
+    margin-top: 2px;
+}
+
+.sexo {
+    width: auto;
+    background-color: rrgb(255, 145, 0)ed;
+    color: black;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.pulse {
+    background-color: rgb(255, 145, 0);
+    color: black;
+    font-weight: bold;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border: 1px solid black;
+    text-align: right;
+}
+
+.botones input {
+    padding: 2px 31px;
+    background-color: lightgray;
+    cursor: pointer;
+    margin-left: 120px;
+    margin-top: 3px;
+}
+
+.botones input:hover {
+    background-color: gray;
+    color: white;
+}

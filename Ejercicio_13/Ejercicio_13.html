@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_13</title>
+    <link rel="stylesheet" href="Ejercicio_13.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form>
+            <div class="linea">
+                <label>Nombre:</label>
+                <input type="text" name="Nombre" placeholder="Escribe tu nombre">
+                <label>Fecha Nac.:</label>
+                <input type="date" name="fecnac" class="corto">
+                <label>DNI / NIE:</label>
+                <input type="text" class="corto">
+            </div>
+            <div class="linea">
+                <label>Apellidos:</label>
+                <input type="text" class="largo">
+            </div>
+            <div class="linea">
+                <label>Calle y número:</label>
+                <input type="text" class="largo">
+            </div>
+            <div class="linea">
+                <label>Código Postal:</label>
+                <input type="text" class="corto">
+                <label>Ciudad:</label>
+                <input type="text" class="ciudad">
+            </div>
+            <div class="linea">
+                <label>Provincia:</label>
+                <input type="text" class="medio">
+                <label>Teléfono:</label>
+                <input type="text" class="medio">
+            </div>
+            <div class="linea">
+                <label>Estado Civil:</label>
+                <select>
+                    <option>Casado</option>
+                    <option>Soltero</option>
+                    <option>Divorciado</option>
+                    <option>Viudo</option>
+                </select>
+                <label class="sexo"><input type="radio" name="sexo"> Hombre</label>
+                <label class="sexo"><input type="radio" name="sexo" checked> Mujer</label>
+                <label class="sexo"><input type="radio" name="sexo" checked> Indeterminado</label>
+            </div>
+            <div class="linea">
+                <label class="idiomas">Idiomas:</label>
+                <div class="bloque-idiomas">
+                    <label><input type="checkbox"> Español</label>
+                    <label><input type="checkbox"> Alemán</label>
+                    <label><input type="checkbox"> Francés</label>
+                    <label><input type="checkbox"> Inglés</label>
+                </div>
+            </div>
+            <div class="linea">
+                <label class="comentarios">Comentarios personales:</label>
+                <textarea rows="4" cols="92"></textarea>
+            </div>
+            <div class="botones">
+                <span class="pulse">Pulse aquí:</span>
+                <input type="submit" value="Enviar datos">
+                <input type="reset" value="Borrar los datos">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

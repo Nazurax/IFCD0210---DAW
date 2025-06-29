@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.linea {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.colizq {
+    display: inline-block;
+    width: 200px;
+    border: 1px solid rgb(1, 65, 1);
+    color: white;
+    background-color: darkgreen;
+    border-radius: 5px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.colder {
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+}
+
+.colder input {
+    width: 117%;
+    padding: 6px;
+    background-color: rgb(182, 221, 182);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Pestaña {
+    margin-top: 20px;
+}
+
+.Pestaña label {
+ 	display: inline-block;
+	width: 200px;
+	border: 1px solid rgb(1, 65, 1);
+	color: white;
+	background-color: darkgreen;
+	border-radius: 5px;
+	padding: 5px;
+	vertical-align: top;
+}
+
+.Pestaña select {
+    width: 27%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgb(212, 221, 182);
+}
