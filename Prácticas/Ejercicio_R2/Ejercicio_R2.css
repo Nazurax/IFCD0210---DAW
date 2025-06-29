@@ -1,0 +1,47 @@
+body {
+    box-sizing: border-box;
+    display: block;
+}
+
+.contenedor {
+    background-color: rgb(225, 222, 109);
+    border: 1px solid rgb(46, 92, 93);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 8px black;
+    border-radius: 5px;
+}
+
+.contenedor img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+    box-shadow: 5px;
+    box-shadow: 0 0 8px black;
+    border-radius: 5px;
+}
+
+p {
+    margin: 10px;
+    font-family: "Roboto";
+    font-size: 23px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .contenedor p {
+        column-count: 3;
+        column-gap: 40px;
+        column-rule: 4px solid white;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contenedor p {
+        column-count: 2;
+        column-gap: 40px;
+        column-rule: 4px solid white;
+    }
+}
