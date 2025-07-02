@@ -1,0 +1,33 @@
+table {
+	width: 200px;
+	margin: 0 auto;
+	color:  white;
+}
+tr:nth-child(2n) {
+	background-color: #ccc;
+}
+tr:nth-child(2n+1) {
+	background-color: #444;
+}
+tr:hover {
+	background-color: orange;
+}
+
+.table {
+	width: 200px;
+	margin: 0 auto;
+	color:  white;
+}
+.tr:nth-child(2n) {
+	background-color: #ccc;
+}
+.tr:nth-child(2n+1) {
+	background-color: #444;
+}
+.tr:hover {
+	background-color: orange;
+}
+.celda {
+	width: calc(50% - 2px);
+	display: inline-block;
+}

@@ -1,0 +1,63 @@
+.galeria {
+	width: 780px;
+	margin: 50px auto;
+}
+figure {
+	width: 250px;
+	text-align: center;
+	display: inline-block;
+	background-color: #eee;
+	padding: 10px 10px 25px 10px;
+	box-sizing: border-box;
+	margin: 0px 5px 20px;
+	border: 2px solid #eee;
+	position: relative;
+	z-index:0;
+}
+.galeria figure img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+}
+.galeria figure.img1 {
+	transform: rotate(-10deg);
+}
+.galeria figure.img2 {
+	transform: rotate(7deg);
+}
+.galeria figure.img3 {
+	transform: rotate(-6deg);
+}
+.galeria figure.img4 {
+	transform: rotate(-8deg);
+}
+.galeria figure.img5 {
+	transform: rotate(6deg);
+}
+.galeria figure.img6 {
+	transform: rotate(-4deg);
+}
+.galeria figure:hover {
+	background-color: #fff;
+	z-index: 1;
+}
+.galeria figure.img1:hover {
+	transform: rotate(-10deg) scale(1.1);
+}
+.galeria figure.img2:hover {
+	transform: rotate(7deg) scale(1.1);
+}
+.galeria figure.img3:hover {
+	transform: rotate(-6deg) scale(1.1);
+}
+.galeria figure.img4:hover {
+	transform: rotate(-8deg) scale(1.1);
+}
+.galeria figure.img5:hover {
+	transform: rotate(6deg) scale(1.1);
+}
+.galeria figure.img6:hover {
+	transform: rotate(-4deg) scale(1.1);
+}
+
+

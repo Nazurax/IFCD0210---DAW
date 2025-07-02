@@ -1,0 +1,39 @@
+.foto {
+	margin: 20px auto;
+	width: 500px;
+	height: 160px;
+	padding: 10px;
+	border: 1px solid #eee;
+	background-color: #eee;
+	position: relative;
+}
+.foto::before {
+	content: '';
+	position: absolute;
+	width: 80%;
+	box-sizing: border-box;
+	height: 50%;
+	transform: rotate(-3deg);
+	z-index: -1;
+	box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+	bottom: 20px;
+	left: 30px;
+}
+.foto::after {
+	content: '';
+	position: absolute;
+	width: 80%;
+	box-sizing: border-box;
+	height: 50%;
+	transform: rotate(3deg);
+	z-index: -1;
+	box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+	bottom: 17px;
+	right: 20px;
+}
+
+
+
+
+
+
