@@ -1,0 +1,17 @@
+img {
+    width: 50%;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 200px;
+    border-radius: 100%;
+    animation: girar 5s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotat (0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

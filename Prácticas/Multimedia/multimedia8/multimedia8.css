@@ -1,0 +1,37 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20px;
+}
+
+.acordeon {
+  width: 400px;
+  margin: 0 auto;
+  border: inset rgb(181, 181, 241);
+  border-radius: 4px;
+}
+
+details {
+  border-bottom: 1px solid #230303;
+}
+
+summary {
+  padding: 20px;
+  color: rgb(246, 246, 246);
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #747a82;
+  outline: none;
+}
+
+details[open] summary {
+  background-color: #264468;
+}
+
+.contenido {
+  background-color: #c3ccd6;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  max-height: 150px;
+  overflow-y: auto;
+}
