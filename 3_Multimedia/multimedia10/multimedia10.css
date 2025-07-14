@@ -1,0 +1,15 @@
+#registro {
+	width: 300px;
+	padding: 10px;
+	border: 1px solid #333;
+	background-origin: 10px;
+	animation: sombra 1s infinite alternate;
+}
+@keyframes sombra {
+	0% {
+		box-shadow: 0 0 15px red;
+	}
+	100% {
+		box-shadow: 0 0 15px yellow;
+	}
+}

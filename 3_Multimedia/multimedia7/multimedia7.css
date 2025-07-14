@@ -1,0 +1,44 @@
+#diaporama {
+	width: 250px;
+	margin: 0 auto;
+}
+#diaporama figure {
+	width: 250px;
+	transform: scale(0.25);
+	height: 80px;
+	transition: all 2s;
+	position: relative;
+	left: 0px;
+}
+#diaporama figcaption {
+	text-align: center;
+	font-family: verdana;
+	width: 250px;
+	font-size: 40px;
+}
+#diaporama figure:target {
+	transform: scale(1);
+	left:  200px;
+}
+
+.cerrar {
+	position: absolute;
+	top: 0px;
+	right: 50px;
+	text-decoration: none;
+	color: green;
+	font-weight: 900;
+	font-size: 20px;
+	font-family: verdana;
+	display: none;
+}
+#diaporama > figure:target > a.cerrar {
+	display: block;
+}
+
+
+
+
+
+
+

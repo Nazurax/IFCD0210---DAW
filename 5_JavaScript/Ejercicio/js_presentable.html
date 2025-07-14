@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de DNI</title>
+  <link rel="stylesheet" href="js_presentable.css">
+</head>
+
+<body>
+  <h1>Calculadora DNI</h1>
+
+  <form id="dniForm">
+    <label for="dni">Introduce el número de DNI:</label>
+    <input type="number" id="dni" required>
+    <button type="submit">Calcular Letra</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    document.getElementById("dniForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que se recargue la página
+
+      const numero = parseInt(document.getElementById("dni").value);
+
+      if (isNaN(numero) || numero < 0 || numero > 99999999) {
+        document.getElementById("resultado").textContent = "Número de DNI no válido.";
+        return;
+      }
+
+      const letra = letras[numero % 23];
+      const resultadoFinal = `${numero}${letra}`;
+
+      document.getElementById("resultado").textContent = `Tu DNI completo es: ${resultadoFinal}`;
+    });
+  </script>
+</body>
+
+</html>

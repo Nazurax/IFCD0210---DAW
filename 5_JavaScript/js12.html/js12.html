@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+<body>
+	<div>
+	<strong>Mes 1</strong>: <span id="mes0"></span>
+	</div>
+	Mes 2: <span id="mes1"></span><br>
+	Mes 3: <span id="mes2"></span><br>
+	Mes 4: <span id="mes3"></span><br>
+	Mes 5: <span id="mes4"></span><br>
+	Mes 6: <span id="mes5"></span><br>
+	Mes 7: <span id="mes6"></span><br>
+	Mes 8: <span id="mes7"></span><br>
+	Mes 9: <span id="mes8"></span><br>
+	Mes 10: <span id="mes9"></span><br>
+	Mes 11: <span id="mes10"></span><br>
+	Mes 12: <span id="mes11"></span><br>
+
+
+	<script>
+		var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+		for (i in meses) {
+			document.getElementById("mes"+i).innerHTML = meses[i];
+		}
+
+
+	</script>	
+</body>
+</html>

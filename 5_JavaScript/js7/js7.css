@@ -1,0 +1,11 @@
+html {
+	background-color: lightsalmon;
+}
+#contenedor {
+	width: 170px;
+	border:  2px solid red;
+	margin: 0 auto;
+}
+input[type="text"] {
+	width: 50px;
+}
