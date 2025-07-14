@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 13</title>
+    <link rel="stylesheet" href="js13.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>¿Es PAR o IMPAR?</h2>
+        <input type="number" id="numero" placeholder="Introduce un número">
+        <br>
+        <button onclick="verificarParImpar()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function esParOImpar(numero) {
+            if (numero % 2 === 0) {
+                return "✅ El número es par.";
+            } else {
+                return "✅ El número es impar.";
+            }
+        }
+
+        function verificarParImpar() {
+            const input = document.getElementById("numero").value.trim();
+            const resultadoEl = document.getElementById("resultado");
+
+            if (input === "" || isNaN(input)) {
+                resultadoEl.textContent = "❌ Por favor, introduce un número válido.";
+                resultadoEl.style.color = "red";
+                return;
+            }
+
+            const numero = parseInt(input);
+
+            const resultado = esParOImpar(numero);
+            resultadoEl.textContent = resultado;
+            resultadoEl.style.color = "green";
+        }
+    </script>
+
+</body>
+
+</html>
