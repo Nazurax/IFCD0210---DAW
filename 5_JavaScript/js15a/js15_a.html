@@ -1,0 +1,298 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 15-a</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        ol {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Lista de Bebidas</h2>
+
+        <ol>
+            <li>Café</li>
+            <li>Infusión</li>
+            <li>Cerveza</li>
+            <li>Vino</li>
+            <li>Tinto de verano</li>
+            <li>Soda</li>
+        </ol>
+
+        <label for="numero">Introduce el número de bebida:</label>
+        <input type="number" id="numero" min="1" max="6">
+        <button onclick="seleccionarBebida()">Seleccionar</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function seleccionarBebida() {
+            var bebidas = document.getElementsByTagName("li");
+            var numero = parseInt(document.getElementById("numero").value);
+
+            if (isNaN(numero) || numero < 1 || numero > bebidas.length) {
+                document.getElementById("resultado").innerText = "⚠️ Introduce un número válido entre 1 y " + bebidas.length + ".";
+            } else {
+                var seleccionada = bebidas[numero - 1].innerText;
+                document.getElementById("resultado").innerText = "Seleccionaste: " + seleccionada;
+            }
+        }
+    </script>
+
+</body>
+
+</html>   
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>App Web DAW - Restaurante</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        h1 {
+            color: #ff5722; /* Naranja */
+            text-align: center;
+        }
+
+        .container {
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .lista {
+            list-style-type: none; /* No usar viñetas */
+            padding-left: 0; /* Elimina el espacio de la lista por defecto */
+        }
+
+        li {
+            background-color: #f5f5f5;
+            margin: 8px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .eliminar-btn {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        input {
+            width: 60%;
+            padding: 8px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>DAW - Desarrollo Web</h1>
+        
+        <!-- Sección de bebidas -->
+        <div id="bebida-section">
+            <p>Bebidas disponibles:</p>
+            <ul id="bebidas" class="lista">
+                <li>Cafe
+                    <span class="eliminar-btn" onclick="borrarBebida(0)">Eliminar</span></li>
+                <li>Te 
+                    <span class="eliminar-btn" onclick="borrarBebida(1)">Eliminar</span></li>
+                <li>Leche 
+                    <span class="eliminar-btn" onclick="borrarBebida(2)">Eliminar</span></li>
+            </ul>
+
+            <p>Número de bebida a mostrar (empezando por 0): 
+                <input type="number" id="numBebida">
+            </p>
+            <button onclick="mostrarBebida()">Ver bebida</button>
+            <button onclick="borrarBebida()">Eliminar bebida</button>
+            <p>Resultado: <span id="resultado"></span></p>
+
+            <p>Nueva bebida:
+                <input type="text" id="nuevaBebida">
+            </p>
+            <button onclick="insertarBebida()">Añadir bebida</button>
+        </div>
+
+        <!-- Sección de comidas -->
+        <div id="comida-section">
+            <h2>Comidas disponibles:</h2>
+            <ul id="comidas" class="lista">
+                <li>Paella
+                    <span class="eliminar-btn" onclick="borrarComida(0)">Eliminar</span></li>
+                <li>Pescado
+                    <span class="eliminar-btn" onclick="borrarComida(1)">Eliminar</span></li>
+                <li>Ensalada 
+                    <span class="eliminar-btn" onclick="borrarComida(2)">Eliminar</span></li>
+            </ul>
+
+            <p>Número de comida a mostrar (empezando por 0): 
+                <input type="number" id="numComida">
+            </p>
+            <button onclick="mostrarComida()">Ver comida</button>
+            <button onclick="borrarComida()">Eliminar comida</button>
+            <p>Resultado: <span id="resultado2"></span></p>
+        </div>
+
+        <!-- Pie de página con créditos -->
+        <footer style="margin-top: 30px; text-align: center;">
+            Desarrollo Web DAW - Aprendiendo JavaScript
+        </footer>
+    </div>
+
+    <script>
+        // Función para mostrar bebida
+        function mostrarBebida() {
+            const num = parseInt(document.getElementById("numBebida").value);
+            const listaBebidas = document.querySelectorAll("#bebidas li");
+            if (isNaN(num) || num < 0 || num >= listaBebidas.length) {
+                document.getElementById("resultado").innerHTML = "Número inválido";
+                return;
+            }
+
+            // Si el número está en rango, muestra la bebida
+            const bebidaSeleccionada = listaBebidas[num];
+            if (bebidaSeleccionada) {
+                document.getElementById("resultado").innerHTML = `Has seleccionado: ${bebidaSeleccionada.textContent}`;
+            } else {
+                document.getElementById("resultado").innerHTML = "No hay bebidas disponibles";
+            }
+        }
+
+        // Función para insertar bebida
+        function insertarBebida() {
+            const nombreBebida = document.getElementById("nuevaBebida").value.trim();
+            if (!nombreBebida) {
+                alert("Introduce el nombre de una bebida");
+                return;
+            }
+            
+            const listaBebidas = document.getElementById("bebidas");
+            const nuevoItem = document.createElement("li");
+            nuevoItem.textContent = nombreBebida;
+            // Puedes añadir un evento para eliminar con botón si lo deseas
+            const botonEliminar = document.createElement("span");
+            botonEliminar.textContent = " Eliminar";
+            botonEliminar.classList.add("eliminar-btn");
+            botonEliminar.onclick = function() {
+                borrarBebida(listaBebidas.children.length); // Usa el índice actual
+            };
+            
+            nuevoItem.appendChild(botonEliminar);
+            listaBebidas.appendChild(nuevoItem);
+        }
+
+        // Función para eliminar bebida por posición en la lista (index)
+        function borrarBebida(index) {
+            const lista = document.getElementById("bebidas");
+            if (!lista.children[index]) {
+                return; // Si el índice es inválido, no hacer nada
+            }
+            
+            lista.removeChild(lista.children[index]);
+            actualizarEventListeners(); // Reinicia las posiciones de los elementos después de borrar
+            
+            // Opcional: Actualizar la visualización inmediatamente y mostrar mensaje
+        }
+
+        // Función para insertar comida (similar a insertarBebida)
+        function insertarComida() {
+            const nombreComida = document.getElementById("nuevaComida").value.trim();
+            if (!nombreComida) { 
+                alert("Introduce el nombre de una comida");
+                return;
+            }
+
+            // Similar a la función insertarBebida(), pero para comidas
+        }
+        
+        // ... (toda la lógica similar para comidas)
+
+        function mostrarComida() {
+            const num = parseInt(document.getElementById("numComida").value);
+            const listaComidas = document.querySelectorAll("#comidas li");
+            
+            if (isNaN(num) || num < 0 || num >= listaComidas.length) {
+                alert("Número inválido para comidas. El índice debe ser entre 0 y " + 
+                     document.getElementById("comidas").children.length-1);
+                return;
+            }
+
+            const comidaSeleccionada = listaComidas[num];
+            if (comidaSeleccionada) {
+                // Aquí puedes modificar el texto de la comida
+                let txt = prompt(`¿Quieres cambiar el nombre? Introduce nuevo nombre o vaciar para borrar`);
+                if (txt === "vacío") { // Si usuario escribe vacío, elimina sin confirmación.
+                    listaComidas.removeChild(comidaSeleccionada);
+            }
+        }
+
+    </script>
+</body>
+
+<!-- Resto de código JavaScript mejorado... -->

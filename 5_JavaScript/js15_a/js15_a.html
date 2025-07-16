@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 15-a</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        ol {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Lista de Bebidas</h2>
+
+        <ol>
+            <li>Café</li>
+            <li>Infusión</li>
+            <li>Cerveza</li>
+            <li>Vino</li>
+            <li>Tinto de verano</li>
+            <li>Soda</li>
+        </ol>
+
+        <label for="numero">Introduce el número de bebida:</label>
+        <input type="number" id="numero" min="1" max="6">
+        <button onclick="seleccionarBebida()">Seleccionar</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function seleccionarBebida() {
+            var bebidas = document.getElementsByTagName("li");
+            var numero = parseInt(document.getElementById("numero").value);
+
+            if (isNaN(numero) || numero < 1 || numero > bebidas.length) {
+                document.getElementById("resultado").innerText = "⚠️ Introduce un número válido entre 1 y " + bebidas.length + ".";
+            } else {
+                var seleccionada = bebidas[numero - 1].innerText;
+                document.getElementById("resultado").innerText = "Seleccionaste: " + seleccionada;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

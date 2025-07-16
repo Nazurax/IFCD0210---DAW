@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script type="text/javascript" src="15f.js"></script>
+</head>
+<body>
+	<p>Lista de bebidas:</p>
+	<ol id="bebidas">
+		<li>Cafe</li>
+		<li>Te</li>
+		<li>Leche</li>
+	</ol>
+	Indica el número de bebida: <input type="text" id="numBebida">
+	<button onclick="mostrar('numBebida','bebidas','resultado')">Ver</button>
+	<button onclick="borrar('numBebida','bebidas','resultado')">Eliminar</button>
+	<br>
+	Indica la nueva bebida: <input type="text" id="nuevaBebida">
+	<button onclick="insertar('nuevaBebida','bebidas','resultado')">Añadir</button><br>
+	<p id="resultado"></p>
+	<hr>
+	<p>Lista de comidas:</p>
+	<ol id="comidas">
+		<li>Paella</li>
+		<li>Pescado</li>
+		<li>Ensalada</li>	
+	</ol>
+	Indica el número de comida: <input type="text" id="numComida">
+	<button onclick="mostrar('numComida','comidas','resultado2')">Ver</button>
+	<button onclick="borrar('numComida','comidas','resultado2')">Eliminar</button>
+	<br>
+	Indica la nueva comida: <input type="text" id="nuevaComida">
+	<button onclick="insertar('nuevaComida','comidas','resultado2')">Añadir</button><br>
+	<p id="resultado2"></p>
+	<hr>
+	<p>Lista de postres:</p>
+	<ol id="postres">
+		<li>Tarta</li>
+		<li>Fruta</li>
+		<li>Flan</li>	
+	</ol>
+	Indica el número de postre: <input type="text" id="numPostre">
+	<button onclick="mostrar('numPostre','postres','resultado3')">Ver</button>
+	<button onclick="borrar('numPostre','postres','resultado3')">Eliminar</button>
+	<br>
+	Indica el nuevo postre: <input type="text" id="nuevoPostre">
+	<button onclick="insertar('nuevoPostre','postres','resultado3')">Añadir</button><br>
+	<p id="resultado3"></p>	
+</body>
+</html>

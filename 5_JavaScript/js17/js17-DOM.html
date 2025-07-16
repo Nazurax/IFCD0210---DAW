@@ -1,0 +1,157 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ejercicio 17 - DOM</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			line-height: 1.6;
+		}
+
+		button {
+			background-color: #007bff;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		#informacion {
+			background-color: #f8f9fa;
+			border: 1px solid #dee2e6;
+			padding: 15px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
+		.resultado {
+			margin: 10px 0;
+			padding: 8px;
+			background-color: #e7f3ff;
+			border-left: 4px solid #007bff;
+		}
+
+		a {
+			color: #007bff;
+			text-decoration: underline;
+		}
+
+		a:hover {
+			color: #0056b3;
+		}
+	</style>
+	<script type="text/javascript">
+		function calcular() {
+			// Limpiar contenido anterior
+			document.getElementById('informacion').innerHTML = '';
+
+			// 1. Número de enlaces de la página
+			var enlaces = document.getElementsByTagName('a');
+			var numeroEnlaces = enlaces.length;
+
+			// 2. Dirección del penúltimo enlace
+			var penultimoEnlace = '';
+			if (numeroEnlaces >= 2) {
+				penultimoEnlace = enlaces[numeroEnlaces - 2].href;
+			}
+
+			// 3. Número de enlaces que apuntan a http://prueba
+			var enlacesPrueba = 0;
+			for (var i = 0; i < enlaces.length; i++) {
+				if (enlaces[i].href === 'http://prueba/' || enlaces[i].href === 'http://prueba') {
+					enlacesPrueba++;
+				}
+			}
+
+			// 4. Número de enlaces del tercer párrafo
+			var parrafos = document.getElementsByTagName('p');
+			var enlacesTercerParrafo = 0;
+			if (parrafos.length >= 3) {
+				var enlacesTercer = parrafos[2].getElementsByTagName('a');
+				enlacesTercerParrafo = enlacesTercer.length;
+			}
+
+			// Mostrar resultados
+			var resultado = '<h3>Resultados del Análisis DOM:</h3>';
+			resultado += '<div class="resultado"><strong>1. Número de enlaces de la página:</strong> ' + numeroEnlaces + '</div>';
+			resultado += '<div class="resultado"><strong>2. Dirección del penúltimo enlace:</strong> ' + penultimoEnlace + '</div>';
+			resultado += '<div class="resultado"><strong>3. Número de enlaces que apuntan a http://prueba:</strong> ' + enlacesPrueba + '</div>';
+			resultado += '<div class="resultado"><strong>4. Número de enlaces del tercer párrafo:</strong> ' + enlacesTercerParrafo + '</div>';
+
+			document.getElementById('informacion').innerHTML = resultado;
+
+			// Información adicional en consola para debugging
+			console.log('=== ANÁLISIS DETALLADO ===');
+			console.log('Total de enlaces:', numeroEnlaces);
+			console.log('Todos los enlaces encontrados:');
+			for (var i = 0; i < enlaces.length; i++) {
+				console.log('  ' + (i + 1) + '. ' + enlaces[i].href + ' - Texto: "' + enlaces[i].textContent + '"');
+			}
+			console.log('Penúltimo enlace:', penultimoEnlace);
+			console.log('Enlaces a http://prueba:', enlacesPrueba);
+			console.log('Enlaces en tercer párrafo:', enlacesTercerParrafo);
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Ejercicio 17 - Análisis DOM</h1>
+	<button onclick="calcular();">Calcular</button>
+	<br>
+	<div id="informacion"></div>
+
+	<p>Lorem ipsum dolor sit amet, <a href="http://prueba/">consectetuer adipiscing elit</a>.
+		Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+		consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien
+		nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa
+		ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit
+		amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+		semper quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2/">Fusce porta</a>.
+		Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat
+		arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+		consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque,
+		vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed
+		tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna.
+		Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio.
+		Praesent id metus.</p>
+
+	<p>Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum
+		primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin
+		consequat auctor diam. <a href="http://prueba/">Ut bibendum blandit est</a>.
+		Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus
+		et metus venenatis porta. Suspendisse cursus, sem non dapibus tincidunt,
+		lorem magna porttitor felis, id sodales dolor dolor sed urna. Sed
+		rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia.
+		Aliquam nec lectus nec neque aliquet dictum. Etiam <a href="http://prueba3/">consequat sem quis massa</a>.
+		Donec aliquam euismod diam. In magna massa, mattis id, pellentesque sit
+		amet, porta sit amet, lectus. Curabitur posuere. Aliquam in elit. Fusce
+		condimentum, arcu in scelerisque lobortis, ante arcu scelerisque mi, at
+		cursus mi risus sed tellus.</p>
+
+	<p>Donec sagittis, nibh nec ullamcorper tristique, pede velit feugiat
+		massa, at sollicitudin justo tellus vitae justo. Vestibulum aliquet,
+		nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba/">aliquam leo odio sed
+			sem</a>.
+		Quisque eget eros vehicula diam euismod tristique. Ut dui. Donec in
+		metus sed risus laoreet sollicitudin. Proin et nisi non arcu sodales
+		hendrerit. In sem. Cras id augue eu lorem dictum interdum. Donec
+		pretium. Proin <a href="http://prueba4/">egestas</a> adipiscing ligula.
+		Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur
+		hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a
+		vestibulum nisl mi at odio. <a href="http://prueba5/">Sed non lectus non est pellentesque</a> auctor.</p>
+</body>
+
+</html>
