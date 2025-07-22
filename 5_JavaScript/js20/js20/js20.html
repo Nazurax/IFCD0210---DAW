@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JS20 - Formulario con Notificaciones</title>
+    <link rel="stylesheet" href="js20.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Registro</h2>
+        <!-- Capa de notificaciones -->
+        <div id="notificacion" class="notificacion">
+            <span id="mensaje"></span>
+            <button id="cerrarNotificacion" class="btn-cerrar">×</button>
+        </div>
+        <form id="formulario">
+            <div class="campo">
+                <label for="nombre">Nombre: <span class="requerido">*</span></label>
+                <input type="text" id="nombre" name="nombre" required>
+                <div class="mensaje-error" id="error-nombre"></div>
+            </div>
+            <div class="campo">
+                <label for="primerApellido">Primer Apellido: <span class="requerido">*</span></label>
+                <input type="text" id="primerApellido" name="primerApellido" required>
+                <div class="mensaje-error" id="error-primerapellido"></div>
+            </div>
+            <div class="campo">
+                <label for="segundoApellido">Segundo Apellido:</label>
+                <input type="text" id="segundoApellido" name="segundoApellido">
+                <div class="mensaje-error" id="error-segundoapellido"></div>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono: <span class="requerido">*</span></label>
+                <input type="text" id="telefono" name="telefono" placeholder="123456789" required>
+                <div class="mensaje-error" id="error-telefono"></div>
+                <small>Debe tener exactamente 9 números</small>
+            </div>
+            <div class="campo">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="mensaje-error" id="error-fechadenacimiento"></div>
+            </div>
+            <div class="campo">
+                <label for="email">Email (opcional):</label>
+                <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com">
+            </div>
+            <div class="campo">
+                <label class="checkbox">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    Acepto la política de privacidad <span class="requerido">*</span>
+                </label>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Formulario</button>
+        </form>
+    </div>
+
+    <script src="js20.js"></script>
+</body>
+</html>

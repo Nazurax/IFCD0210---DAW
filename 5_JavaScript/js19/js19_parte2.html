@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JS19 - Formulario con Validación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio JS19</h1>
+        <h2>Formulario de Registro</h2>
+        
+        <form id="registrationForm" class="form" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre: <span class="required">*</span></label>
+                <input type="text" id="nombre" name="nombre" required>
+                <div class="error-message" id="error-nombre"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="primerApellido">Primer Apellido: <span class="required">*</span></label>
+                <input type="text" id="primerApellido" name="primerApellido" required>
+                <div class="error-message" id="error-primerApellido"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="segundoApellido">Segundo Apellido: <span class="required">*</span></label>
+                <input type="text" id="segundoApellido" name="segundoApellido" required>
+                <div class="error-message" id="error-segundoApellido"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono: <span class="required">*</span></label>
+                <input type="tel" id="telefono" name="telefono" placeholder="123456789" required>
+                <div class="error-message" id="error-telefono"></div>
+                <small class="hint">Debe contener exactamente 9 cifras, sin guiones</small>
+            </div>
+
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento: <span class="required">*</span></label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="error-message" id="error-fechaNacimiento"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com">
+                <div class="error-message" id="error-email"></div>
+                <small class="hint">Campo opcional</small>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <span class="checkmark"></span>
+                    He leído y acepto la <a href="#" target="_blank">Política de Privacidad</a> <span class="required">*</span>
+                </label>
+                <div class="error-message" id="error-privacidad"></div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submitBtn" class="btn-submit">
+                    Enviar Formulario
+                </button>
+                <button type="reset" class="btn-reset">
+                    Limpiar Formulario
+                </button>
+            </div>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

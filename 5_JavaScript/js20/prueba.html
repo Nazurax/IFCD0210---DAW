@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JS20 - Formulario con Notificaciones</title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio JS20</h1>
+        <h2>Formulario de Registro</h2>
+        <!-- Capa de notificaciones -->
+        <div id="notificacion" class="notificacion">
+            <span id="mensaje"></span>
+            <button id="cerrarNotificacion" class="btn-cerrar">×</button>
+        </div>
+        <form id="formulario">
+            <div class="campo">
+                <label for="nombre">Nombre: <span class="requerido">*</span></label>
+                <input type="text" id="nombre" name="nombre" required>
+                <div class="mensaje-error" id="error-nombre"></div>
+            </div>
+            <div class="campo">
+                <label for="primerApellido">Primer Apellido: <span class="requerido">*</span></label>
+                <input type="text" id="primerApellido" name="primerApellido" required>
+                <div class="mensaje-error" id="error-primerapellido"></div>
+            </div>
+            <div class="campo">
+                <label for="segundoApellido">Segundo Apellido:</label>
+                <input type="text" id="segundoApellido" name="segundoApellido">
+                <div class="mensaje-error" id="error-segundoapellido"></div>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono: <span class="requerido">*</span></label>
+                <input type="text" id="telefono" name="telefono" placeholder="123456789" required>
+                <div class="mensaje-error" id="error-telefono"></div>
+                <small>Debe tener exactamente 9 números</small>
+            </div>
+            <div class="campo">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="mensaje-error" id="error-fechadenacimiento"></div>
+            </div>
+            <div class="campo">
+                <label for="email">Email (opcional):</label>
+                <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com">
+            </div>
+            <div class="campo">
+                <label class="checkbox">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    Acepto la política de privacidad <span class="requerido">*</span>
+                </label>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar Formulario</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formulario = document.getElementById('formulario');
+            const notificacion = document.getElementById('notificacion');
+            const mensaje = document.getElementById('mensaje');
+            const cerrarBtn = document.getElementById('cerrarNotificacion');
+            
+            // Campos del formulario
+            const nombre = document.getElementById('nombre');
+            const primerApellido = document.getElementById('primerApellido');
+            const segundoApellido = document.getElementById('segundoApellido');
+            const telefono = document.getElementById('telefono');
+            const fechaNacimiento = document.getElementById('fechaNacimiento');
+            const email = document.getElementById('email');
+            const privacidad = document.getElementById('privacidad');
+            
+            // Función para mostrar notificación
+            function mostrarNotificacion(texto, tipo) {
+                mensaje.textContent = texto;
+                notificacion.className = `notificacion ${tipo}`;
+                notificacion.style.display = 'block';
+                
+                // Auto-cerrar después de 5 segundos
+                setTimeout(() => {
+                    notificacion.style.display = 'none';
+                }, 5000);
+            }
+            
+            // Función para mostrar error en campo específico
+            function mostrarError(campo, mensaje) {
+                const errorDiv = document.getElementById(`error-${campo.name}`);
+                if (errorDiv) {
+                    errorDiv.textContent = mensaje;
+                    errorDiv.style.display = 'block';
+                    campo.classList.add('error');
+                }
+            }
+            
+            // Función para limpiar error de campo específico
+            function limpiarError(campo) {
+                const errorDiv = document.getElementById(`error-${campo.name}`);
+                if (errorDiv) {
+                    errorDiv.style.display = 'none';
+                    campo.classList.remove('error');
+                }
+            }
+            
+            // Función para validar solo texto (sin números ni símbolos)
+            function validarTexto(texto) {
+                const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+                return regex.test(texto);
+            }
+            
+            // Función para validar teléfono (solo números, exactamente 9 dígitos)
+            function validarTelefono(telefono) {
+                const regex = /^[0-9]{9}$/;
+                return regex.test(telefono);
+            }
+            
+            // Validación en tiempo real para campos de texto
+            [nombre, primerApellido, segundoApellido].forEach(campo => {
+                campo.addEventListener('input', function() {
+                    if (this.value.trim() === '') {
+                        limpiarError(this);
+                        return;
+                    }
+                    
+                    if (!validarTexto(this.value)) {
+                        mostrarError(this, 'Solo se permiten letras y espacios');
+                    } else {
+                        limpiarError(this);
+                    }
+                });
+            });
+            
+            // Validación en tiempo real para teléfono
+            telefono.addEventListener('input', function() {
+                // Eliminar caracteres no numéricos
+                this.value = this.value.replace(/[^0-9]/g, '');
+                
+                if (this.value.length === 0) {
+                    limpiarError(this);
+                    return;
+                }
+                
+                if (!validarTelefono(this.value)) {
+                    if (this.value.length < 9) {
+                        mostrarError(this, 'Debe tener exactamente 9 números');
+                    } else if (this.value.length > 9) {
+                        mostrarError(this, 'Máximo 9 números');
+                        this.value = this.value.substring(0, 9);
+                    }
+                } else {
+                    limpiarError(this);
+                }
+            });
+            
+            // Cerrar notificación
+            cerrarBtn.addEventListener('click', function() {
+                notificacion.style.display = 'none';
+            });
+            
+            // Validación del formulario al enviar
+            formulario.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let esValido = true;
+                
+                // Limpiar errores anteriores
+                [nombre, primerApellido, segundoApellido, telefono, fechaNacimiento].forEach(campo => {
+                    limpiarError(campo);
+                });
+                
+                // Validar nombre
+                if (nombre.value.trim() === '') {
+                    mostrarError(nombre, 'El nombre es obligatorio');
+                    esValido = false;
+                } else if (!validarTexto(nombre.value)) {
+                    mostrarError(nombre, 'Solo se permiten letras y espacios');
+                    esValido = false;
+                }
+                
+                // Validar primer apellido
+                if (primerApellido.value.trim() === '') {
+                    mostrarError(primerApellido, 'El primer apellido es obligatorio');
+                    esValido = false;
+                } else if (!validarTexto(primerApellido.value)) {
+                    mostrarError(primerApellido, 'Solo se permiten letras y espacios');
+                    esValido = false;
+                }
+                
+                // Validar segundo apellido (solo si tiene contenido)
+                if (segundoApellido.value.trim() !== '' && !validarTexto(segundoApellido.value)) {
+                    mostrarError(segundoApellido, 'Solo se permiten letras y espacios');
+                    esValido = false;
+                }
+                
+                // Validar teléfono
+                if (telefono.value.trim() === '') {
+                    mostrarError(telefono, 'El teléfono es obligatorio');
+                    esValido = false;
+                } else if (!validarTelefono(telefono.value)) {
+                    mostrarError(telefono, 'Debe tener exactamente 9 números');
+                    esValido = false;
+                }
+                
+                // Validar fecha de nacimiento
+                if (fechaNacimiento.value === '') {
+                    mostrarError(fechaNacimiento, 'La fecha de nacimiento es obligatoria');
+                    esValido = false;
+                }
+                
+                // Validar checkbox de privacidad
+                if (!privacidad.checked) {
+                    mostrarNotificacion('Debes aceptar la política de privacidad', 'error');
+                    esValido = false;
+                }
+                
+                // Mostrar resultado
+                if (esValido) {
+                    mostrarNotificacion('Formulario enviado correctamente', 'exito');
+                    // Aquí podrías enviar los datos al servidor
+                    formulario.reset();
+                } else {
+                    mostrarNotificacion('Por favor, corrige los errores en el formulario', 'error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

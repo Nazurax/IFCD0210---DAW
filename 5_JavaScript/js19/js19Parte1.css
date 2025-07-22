@@ -1,0 +1,45 @@
+*{
+	font: normal bold 12px Verdana, Arial;
+}
+
+body{
+	 background-color: #FFF8DC;
+}
+
+form.contacto{
+	width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+	margin-top: 25px;
+	background-color: white;
+	border: 1px solid #A52A2A;
+	border-radius: 8px;
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+		.contacto div{
+			margin-bottom: 15px;
+		}
+
+		.contacto label{
+			display: block;
+		}
+
+		.contacto input{
+			padding: 4px;
+			margin-top: 3px;
+			border-radius: 4px;
+			width: 212px;
+		}
+
+		#dia, #mes{
+			width: 20px;
+		}
+
+		#ano{
+			width: 40px;
+		}
+
+		input#privacidad{
+			width: 15px;
+		}

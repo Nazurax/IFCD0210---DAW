@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>classBici</title>
+    <link rel="stylesheet" href="classBici.css">
+</head>
+<body>
+    <h2>Crear una nueva bicicleta</h2>
+    <form>
+        <label>Marca: </label><input type="text" id="marca"><br>  
+        <label>Tipo de bicicleta: </label><input type="text" id="tipoBicicleta"><br>
+        <label>Medida: </label><input type="text" id="medida"><br>
+        <label>Tamaño de ruedas: </label><input type="text" id="tamanoRuedas"><br>
+        <label>Grupo: </label><input type="text" id="grupo"><br>
+        <label>Color: </label><input type="text" id="color"><br>
+        <input type="button" value="Crear bicicleta" onclick="crearBicicleta();">
+    </form>
+    <h2>Lista de bicicletas</h2>
+    <div id="bicicletas"></div>
+    <script type="text/javascript" src="classBici.js"></script>
+</body>
+</html>
