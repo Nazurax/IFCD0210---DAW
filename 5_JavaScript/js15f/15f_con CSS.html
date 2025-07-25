@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de listas</title>
+  <script type="text/javascript" src="15f.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    .seccion {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    label, input, button {
+      margin: 5px 0;
+      display: block;
+    }
+
+    input {
+      padding: 5px;
+      width: 200px;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 6px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p.resultado {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="seccion">
+    <h2>Lista de bebidas:</h2>
+    <ol id="bebidas">
+      <li>Café</li>
+      <li>Té</li>
+      <li>Leche</li>
+    </ol>
+    <label for="numBebida">Número de bebida:</label>
+    <input type="text" id="numBebida">
+    <button onclick="mostrar('numBebida','bebidas','resultado')">Ver</button>
+    <button onclick="borrar('numBebida','bebidas','resultado')">Eliminar</button>
+
+    <label for="nuevaBebida">Nueva bebida:</label>
+    <input type="text" id="nuevaBebida">
+    <button onclick="insertar('nuevaBebida','bebidas','resultado')">Añadir</button>
+    <p id="resultado" class="resultado"></p>
+  </div>
+
+  <div class="seccion">
+    <h2>Lista de comidas:</h2>
+    <ol id="comidas">
+      <li>Paella</li>
+      <li>Pescado</li>
+      <li>Ensalada</li>  
+    </ol>
+    <label for="numComida">Número de comida:</label>
+    <input type="text" id="numComida">
+    <button onclick="mostrar('numComida','comidas','resultado2')">Ver</button>
+    <button onclick="borrar('numComida','comidas','resultado2')">Eliminar</button>
+
+    <label for="nuevaComida">Nueva comida:</label>
+    <input type="text" id="nuevaComida">
+    <button onclick="insertar('nuevaComida','comidas','resultado2')">Añadir</button>
+    <p id="resultado2" class="resultado"></p>
+  </div>
+
+  <div class="seccion">
+    <h2>Lista de postres:</h2>
+    <ol id="postres">
+      <li>Tarta</li>
+      <li>Fruta</li>
+      <li>Flan</li>  
+    </ol>
+    <label for="numPostre">Número de postre:</label>
+    <input type="text" id="numPostre">
+    <button onclick="mostrar('numPostre','postres','resultado3')">Ver</button>
+    <button onclick="borrar('numPostre','postres','resultado3')">Eliminar</button>
+
+    <label for="nuevoPostre">Nuevo postre:</label>
+    <input type="text" id="nuevoPostre">
+    <button onclick="insertar('nuevoPostre','postres','resultado3')">Añadir</button>
+    <p id="resultado3" class="resultado"></p>
+  </div>
+
+</body>
+</html>
